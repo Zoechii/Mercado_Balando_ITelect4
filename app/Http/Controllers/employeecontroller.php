@@ -16,16 +16,17 @@ class employeecontroller extends Controller
     }
     public function create()
     {
-        return view('employees.create');
+        return view('employee.create');
 
     }
-    public function store(Request $request){
-        
-    }
-}
-    // employee::create($request->all());
-    // return view ('employee.create');
-    // }
+    public function store(Request $request)
+    {
+       $request->validate([
+       ]);
+
+     employee::create($request->all());
+     return view ('employee.create');
+     }
 
 
         
@@ -33,4 +34,4 @@ class employeecontroller extends Controller
 //             return redirect ()->back()->with('status','Employee Updated Successfully!');
 //             }
 
-// }
+}
