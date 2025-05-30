@@ -12,17 +12,25 @@ class employeecontroller extends Controller
     {   
         $employees = employee::get();
 
-        return view ('employee.index');
+        return view ('employee.index', compact('employees'));
     }
+    public function create()
+    {
+        return view('employees.create');
 
+    }
+    public function store(Request $request){
+        
+    }
+}
     // employee::create($request->all());
     // return view ('employee.create');
     // }
 
 
         
-            // employee::findOrFail($id)->update($request->all());
-            // return redirect ()->back()->with('status','Employee Updated Successfully!');
-            // }
+//             employee::findOrFail($id)->update($request->all());
+//             return redirect ()->back()->with('status','Employee Updated Successfully!');
+//             }
 
-}
+// }
